@@ -18,7 +18,8 @@ dockerci.with {
          cps {
                	script('''
                	|node('docker') {
-				|   stage('GetDockerfile') { // for display purposes
+				|   stage('GetDockerfile') {
+				|   scm '''.stripMargin() + scmProvider.get(projectScmNamespace, dockerfileGitRepo , "*/master", "adop-jenkins-master", null) + '''
 				|   }
 				|   stage('DockerCodeAnalysis') {
 				|   }
