@@ -17,21 +17,21 @@ dockerci.with {
     definition {
          cps {
                	script('''
-               	node('docker') {
-				   stage('GetDockerfile') { // for display purposes
-				   }
-				   stage('DockerCodeAnalysis') {
-				   }
-				   stage('DockerBuild') {
-				   }
-				   stage('DockerSecurityTest') {
-				   }
-				   stage('DockerBDDTest') {
-				   }
-				   stage('DockerPush') {
-				   }
-			   	}
-                ''')
+               	|node('docker') {
+				|   stage('GetDockerfile') { // for display purposes
+				|   }
+				|   stage('DockerCodeAnalysis') {
+				|   }
+				|   stage('DockerBuild') {
+				|   }
+				|   stage('DockerSecurityTest') {
+				|   }
+				|   stage('DockerBDDTest') {
+				|   }
+				|   stage('DockerPush') {
+				|   }
+			   	|}
+                |'''.stripMargin())
                sandbox()
          }
     }
