@@ -16,7 +16,22 @@ def dockerci = pipelineJob(projectFolderName + "/Docker_CI")
 dockerci.with {
     definition {
          cps {
-               script()
+               	script('''
+               	node('docker') {
+				   stage('GetDockerfile') { // for display purposes
+				   }
+				   stage('DockerCodeAnalysis') {
+				   }
+				   stage('DockerBuild') {
+				   }
+				   stage('DockerSecurityTest') {
+				   }
+				   stage('DockerBDDTest') {
+				   }
+				   stage('DockerPush') {
+				   }
+			   	}
+                ''')
                sandbox()
          }
     }
